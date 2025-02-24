@@ -1,0 +1,25 @@
+p, h2{
+    color:white;
+}
+.products{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2a2a;
+    padding: 1em;
+    box-shadow: 5px 5px 5px #13131376;
+    padding: 10px 20px 40px 20px;
+    border-radius: 16px;
+}
+.product__img{
+    width: 100%;
+    background-color: rgb(224, 125, 90);
+    box-shadow: 5px 5px 5px black;
+}
+.product__text{
+    flex-grow: 1;
+}
