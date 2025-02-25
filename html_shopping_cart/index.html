@@ -7,28 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="main">
-        <section class="products">
-            <article class="product">
-                <h2 class="product__title">STOCKHOLM</h2>
-                <img src="https://www.ikea.com/dk/da/images/products/stockholm-stol-valnoddetrae__0753719_pe747693_s5.jpg?f=xl" 
-                alt="Stol, valnøddetræ" 
-                class="product__img">
+    <div class="products">
+        <article class="product">
+            <h2 class="product__title">STOCKHOLM</h2>
+            <img 
+            src="https://www.ikea.com/dk/da/images/products/stockholm-stol-valnoddetrae__0753719_pe747693_s5.jpg?f=xl" 
+            alt="Stol, valnøddetræ" 
+            class="product__img">
+            <div class="product__description">
                 <p class="product__text">Alle produkter i STOCKHOLM kollektionen er en hyldest til skandinavisk design. Denne stabile stol er ingen undtagelse, og de naturlige farveskift i træet giver hver eneste stol et unikt udtryk.</p>
                 <p class="product__price">1.400,-</p>
-                <button id="increment-btn" onclick="addProduct()">Tilføj til kurven</button>
-                
-                <p id="product__amount">0</p>
-            </article>
-            <article class="product">
-                <h2 class="product__title">SALNÖ</h2>
-                <img src="https://www.ikea.com/dk/da/images/products/salnoe-stol-rotting__1224550_pe915021_s5.jpg?f=xl" 
-                class="product__img">
-                <p class="product__text">Nem at tage med hjem, enkel at samle – og unik. Den behagelige SALNÖ stol med bløde, buede former i håndflettet rotting hjælper dig med at få lidt af naturen ind i dit hjem.</p>
-                <p class="product__price">595,-</p>
-            </article>
-        </section>
-    </main>
+                <p class="product__amount">Antal i kurven:</p>
+                <p id="productCount" class="product__count">0</p>
+                <hr class="divider__line">
+                <button id="increment-btn" onclick="addProduct()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                </button>
+                <button id="decrease-btn" onclick="removeProduct()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-440v-80h560v80H200Z"/></svg>
+                </button>
+            </div>
+        </article>
+        <article class="product">
+            <h2 class="product__title">SALNÖ</h2>
+            <img 
+            src="https://www.ikea.com/dk/da/images/products/salnoe-stol-rotting__1224550_pe915021_s5.jpg?f=xl"
+            alt="Stol, rotting"
+            class="product__img">
+            <p class="product__text">Nem at tage med hjem, enkel at samle – og unik. Den behagelige SALNÖ stol med bløde, buede former i håndflettet rotting hjælper dig med at få lidt af naturen ind i dit hjem.</p>
+            <p class="product__price">595,-</p>
+        </article>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,10 +1,12 @@
-let productAmount = 0
-let productAmountEl = document.getElementById("product__amount")
+let productCount = 0
+let productCountEl = document.getElementById("productCount")
 function addProduct() {
-    productAmount = productAmount + 1
-    productAmountEl.innerText = productAmount
+    productCount = productCount + 1
+    productCountEl.innerText = productCount
 }
 function removeProduct() {
-    productAmount = productAmount - 1
-    productAmountEl.innerText = productAmount
+    if (productCount > 0) {
+        productCount = productCount - 1
+        productCountEl.innerText = productCount
+    }
 }
