@@ -33,3 +33,13 @@ product1InputEl.addEventListener("keypress", function(event) {
         updateProduct1Amount();
     }
 });
+
+//product prices
+const product1Price = 1400;
+let product1PriceEl = document.getElementById("product1Price");
+product1PriceEl.innerText = product1Price + ",-";
+
+let product1TotalPrice = product1Amount * product1Price;
+let product1TotalPriceEl = document.getElementById("product1TotalPrice");
+product1TotalPriceEl.innerText = product1TotalPrice + ",-"
+console.log(product1Amount)
