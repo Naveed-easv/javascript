@@ -16,9 +16,9 @@
             class="product__img">
             <div class="product__description">
                 <p class="product__text">Alle produkter i STOCKHOLM kollektionen er en hyldest til skandinavisk design. Denne stabile stol er ingen undtagelse, og de naturlige farveskift i træet giver hver eneste stol et unikt udtryk.</p>
-                <p class="product__price">1.400,-</p>
+                <p id="product1Price" class="product__price"></p>
                 <p class="product__amount">Antal i kurven:</p>
-                <p id="productCount" class="product__count">0</p>
+                <p id="product1Amount" class="product__count">0</p>
                 <hr class="divider__line">
                 <button id="increment-btn" onclick="addProduct1()">
                     <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#fff"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
@@ -26,6 +26,8 @@
                 <button id="decrease-btn" onclick="removeProduct1()">
                     <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed"><path d="M200-440v-80h560v80H200Z"/></svg>
                 </button>
+                <input type="number" id="product1Input" min="0" placeholder="Indtast antal" class="product__input">
+                <button onclick="updateProduct1Amount()" class="input__button">Angiv antal</button>
             </div>
         </article>
         <article class="product">

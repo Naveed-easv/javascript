@@ -46,7 +46,8 @@ p, h2, button{
     grid-template-areas: 
     "text text text price"
     "line line line line"
-    "amount count btn btn";
+    "amount count btn btn"
+    "input input send send";
 }
 .product__text{
     grid-area: text;
@@ -76,4 +77,10 @@ button{
     height: fit-content;
     justify-self: center;
     align-self: center;
+}
+.product__input{
+    grid-area: input;
+}
+.input__button{
+    grid-area: send;
 }
