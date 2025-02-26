@@ -42,7 +42,7 @@ function removeProduct(productKey) {
 //update product amount though input field
 function updateProductAmount(productKey, inputEl) {
     let inputAmount = parseInt(inputEl.value, 10); // converts string to integer in base 10
-    if (!isNaN(inputAmount) && inputAmount >= 0) {
+    if (!isNaN(inputAmount) && inputAmount >= 0) { // "!isNaN" = is a valid number, "&&" = both must be true
         products[productKey].amount = inputAmount;
         products[productKey].amountEl.innerText = products[productKey].amount;
         updateTotalCost(productKey);
