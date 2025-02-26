@@ -18,24 +18,22 @@
                 <p class="product__text">Alle produkter i STOCKHOLM kollektionen er en hyldest til skandinavisk design. Denne stabile stol er ingen undtagelse, og de naturlige farveskift i træet giver hver eneste stol et unikt udtryk.</p>
                 <p id="product1Price" class="product__price"></p>
                 <p class="product__amount">Antal i kurven:
-                    <span id="product1Amount" class="product__count">0</span> 
+                    <span id="product1__amount">0</span> 
                 </p>
                 <hr class="divider__line">
-                <button id="increment-btn" onclick="addProduct1()">
+                <button onclick="addProduct('product1')">
                     <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#fff"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
                 </button>
-                <button id="decrease-btn" onclick="removeProduct1()">
+                <button onclick="removeProduct('product1')">
                     <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed"><path d="M200-440v-80h560v80H200Z"/></svg>
                 </button>
-                <input type="number" id="product1Input" min="0" placeholder="Indtast antal" class="product__input">
-                <button onclick="updateProduct1Amount()" class="input__button">Angiv antal</button>
+                <input type="number" id="product1Input" min="0" placeholder="Indtast antal" onkeypress="if(event.key === 'Enter') updateProductAmount('product1', this)"> <!--  "this" refers to the "<input>" element -->
                 <h3 class="product__totalPrice--title">Samlet pris:
-                    <span id="product1TotalPrice" class="product__totalPrice"></span>
+                    <span id="product1__cost" class="product__totalPrice"></span>
                 </h3>
             </div>
         </article>
-
-        <!-- <article class="product">
+        <article class="product">
             <h2 class="product__title">SALNÖ</h2>
             <img 
             src="https://www.ikea.com/dk/da/images/products/salnoe-stol-rotting__1224550_pe915021_s5.jpg?f=xl"
