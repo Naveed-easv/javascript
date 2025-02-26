@@ -50,7 +50,8 @@ p, h2, h3, button{
     "text text text price"
     "line line line line"
     "amount amount btn btn"
-    "input input send send";
+    "input input send send"
+    "total total total total";
 }
 .product__text{
     grid-area: text;
@@ -65,7 +66,10 @@ p, h2, h3, button{
 .product__amount{
     grid-area: amount;
 }
-.product__count{
+.product__totalPrice--title{
+    grid-area: total;
+}
+.product__totalPrice{
     border-bottom: 2px solid white;
     font-weight: 700;
 }
