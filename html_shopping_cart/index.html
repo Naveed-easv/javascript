@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="products">
+        <article class="product">
+            <h2 class="product__title">STOCKHOLM</h2>
+            <img 
+            src="https://www.ikea.com/dk/da/images/products/stockholm-stol-valnoddetrae__0753719_pe747693_s5.jpg?f=xl" 
+            alt="Stol, valnøddetræ" 
+            class="product__img">
+            <div class="product__description">
+                <p class="product__text">Alle produkter i STOCKHOLM kollektionen er en hyldest til skandinavisk design. Denne stabile stol er ingen undtagelse, og de naturlige farveskift i træet giver hver eneste stol et unikt udtryk.</p>
+                <p id="product1Price" class="product__price"></p>
+            </div>
+            <hr class="divider__line">
+            <div class="product__cart">
+                <p class="product__amount">Antal i kurven:
+                    <span id="product1__amount">0</span>
+                </p>
+                <input type="number" id="product1Input" min="0" placeholder="Indtast antal" onkeypress="if(event.key === 'Enter') updateProductAmount('product1', this)"> <!--  "this" refers to the "<input>" element -->
+                <button onclick="addProduct('product1')">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#fff"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                </button>
+                <button onclick="removeProduct('product1')">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed"><path d="M200-440v-80h560v80H200Z"/></svg>
+                </button>
+            </div>
+            <h3 class="product__totalPrice--title">Samlet pris:
+                <span id="product1__cost" class="product__totalPrice"></span>
+            </h3>
+        </article>
+        <article class="product">
+            <h2 class="product__title">SALNÖ</h2>
+            <img 
+            src="https://www.ikea.com/dk/da/images/products/salnoe-stol-rotting__1224550_pe915021_s5.jpg?f=xl"
+            alt="Stol, rotting"
+            class="product__img">
+            <div class="product__description">
+                <p class="product__text">Nem at tage med hjem, enkel at samle – og unik. Den behagelige SALNÖ stol med bløde, buede former i håndflettet rotting hjælper dig med at få lidt af naturen ind i dit hjem.</p>
+                <p id="product2Price" class="product__price"></p>
+            </div>
+            <hr class="divider__line">
+            <div class="product__cart">
+                <p class="product__amount">Antal i kurven:
+                    <span id="product2__amount">0</span>
+                </p>
+                <button onclick="addProduct('product2')">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#fff"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                </button>
+                <button onclick="removeProduct('product2')">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed"><path d="M200-440v-80h560v80H200Z"/></svg>
+                </button>
+                <input type="number" id="product2Input" min="0" placeholder="Indtast antal" onkeypress="if(event.key === 'Enter') updateProductAmount('product2', this)"> <!--  "this" refers to the "<input>" element -->
+            </div>
+            <h3 class="product__totalPrice--title">Samlet pris:
+                <span id="product2__cost" class="product__totalPrice"></span>
+            </h3>
+        </article>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
