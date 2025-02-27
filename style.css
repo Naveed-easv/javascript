@@ -43,30 +43,14 @@ p, h2, h3, button{
     border-radius: 8px;
 }
 .product__description{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
-    "text text text price"
-    "line line line line"
-    "amount amount btn btn"
-    "input input send send"
-    "total total total total";
-}
-.product__text{
-    grid-area: text;
+    display: flex;
 }
 .product__price{
-    grid-area: price;
     justify-self: flex-end;
     align-self: flex-end;
     font-weight: 700;
     font-size: 1.25em;
-}
-.product__amount{
-    grid-area: amount;
-}
-.product__totalPrice--title{
-    grid-area: total;
+    padding-left: 1em;
 }
 .product__totalPrice{
     border-bottom: 2px solid white;
@@ -77,7 +61,11 @@ p, h2, h3, button{
     border: none; 
     height: 1px; 
     background-color: hsla(100, 100%, 100%, 0.1);
-    grid-area: line;
+}
+.product__cart{
+    display: flex;
+    gap: 1em;
+    align-items: center;
 }
 button{
     background-color: #2a2a2a;
@@ -86,9 +74,7 @@ button{
     justify-self: center;
     align-self: center;
 }
-.product__input{
-    grid-area: input;
-}
-.input__button{
-    grid-area: send;
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
