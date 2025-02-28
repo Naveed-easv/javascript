@@ -8,21 +8,24 @@ let images = [
 ]
 
 let image = document.getElementById("productImage");
-let size = "small"
 
 // colors
 let color = "black"
 let productColorEl = document.getElementById("productColor")
+
 function black() {
-    productColorEl.innerText = "Black"
+    color = "black"
+    productColorEl.innerText = "Sort"
     image.src = images[0]
+    console.log(size + ", " + color);
 }
 
 function white() {
-    image.src = images[3]
     color = "white"
-    productColorEl.innerText = "White"
+    image.src = images[3]
+    productColorEl.innerText = "Hvid"
     productPriceEl.innerText = 100 + ",-";
+    console.log(size + ", " + color);
 }
 
 // price
@@ -31,7 +34,7 @@ let productPrice = 100 + ",-";
 productPriceEl.innerText = productPrice
 
 function updatePrice() {
-    if (color = "black") {
+    if (color === "black") {
         productPriceEl.innerText = 75
     } else {
         productPriceEl.innerText = 100
@@ -39,31 +42,42 @@ function updatePrice() {
 }
 
 // sizes
+let size = "small"
 let productSizeEl = document.getElementById("productSize")
+
 function small() {
-    let size = "small"
+    size = "small"
     productSizeEl.innerText = "Small"
-    productPriceEl.innerText = 100 + ",-";
-    if (color = "white") {
+    if (color === "white") {
+        productPriceEl.innerText = 100 + ",-";
+    } else if (color === "black" && size === "small") {
         productPriceEl.innerText = 100 + ",-";
     }
     updatePrice()
+    console.log(size + ", " + color);
 }
 
 function medium() {
-    let size = "medium"
+    size = "medium"
     productSizeEl.innerText = "Medium"
-    if (color = "black") {
+    if (color === "black") {
         productPriceEl.innerText = 75 + ",-";
+    } else {
+        productPriceEl.innerText = 100 + ",-";
     }
+    productSizeEl.innerText = "Medium"
     updatePrice()
+    console.log(size + ", " + color);
 }
 
 function large() {
-    let size = "large"
-    if (color = "black") {
+    size = "large"
+    if (color === "black") {
         productPriceEl.innerText = 75 + ",-";
+    } else {
+        productPriceEl.innerText = 100 + ",-";
     }
     productSizeEl.innerText = "Large"
     updatePrice()
+    console.log(size + ", " + color);
 }
