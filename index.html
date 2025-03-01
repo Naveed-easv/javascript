@@ -11,11 +11,14 @@
         <h2 class="products__title">Produkter</h2>
         <article class="product">
             <h3 class="product__title">T-Shirt</h3>
-            <img 
-            src="media/black-front.png" 
-            alt="T-shirt" 
-            class="product__image"
-            id="productImage">
+            <div class="product__imageContainer">
+                <img
+                src="media/black-front.png"
+                alt="T-shirt"
+                class="product__image"
+                id="productImage">
+                <p id="productSale" class="product__sale hidden">På tilbud!</p>
+            </div>
             <p class="product__description"></p>
             <button onclick="white()">Hvid</button>
             <button onclick="black()">Sort</button>

@@ -6,9 +6,10 @@ let images = [
     "media/white-back.png",
     "media/white-side.png"
 ]
-
 let image = document.getElementById("productImage");
+let productSaleEl = document.getElementById("productSale")
 
+// update price continously
 function updatePrice() {
     if (color === "black") {
         if (size === "medium" || size === "large") {
@@ -17,11 +18,17 @@ function updatePrice() {
     } else {
         productPriceEl.innerText = 100 + ",-";
     }
+    if (productPriceEl.innerText === "75,-") {
+        productSaleEl.style.display = "block";
+    } else {
+        productSaleEl.style.display = "none";
+    }
 }
 
 // colors
 let color = "black"
 let productColorEl = document.getElementById("productColor")
+productColorEl.innerText = "Sort"
 
 function black() {
     color = "black"
@@ -46,6 +53,7 @@ productPriceEl.innerText = productPrice
 // sizes
 let size = "small"
 let productSizeEl = document.getElementById("productSize")
+productSizeEl.innerText = "Small"
 
 function small() {
     size = "small"
