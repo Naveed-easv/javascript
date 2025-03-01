@@ -12,8 +12,6 @@ let image = document.getElementById("productImage");
 function updatePrice() {
     if (color === "black") {
         if (size === "medium" || size === "large") {
-            productPriceEl.innerText = 100 + ",-";
-        } else {
             productPriceEl.innerText = 75 + ",-";
         }
     } else {
