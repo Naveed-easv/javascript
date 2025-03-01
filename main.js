@@ -9,6 +9,18 @@ let images = [
 
 let image = document.getElementById("productImage");
 
+function updatePrice() {
+    if (color === "black") {
+        if (size === "medium" || size === "large") {
+            productPriceEl.innerText = 100 + ",-";
+        } else {
+            productPriceEl.innerText = 75 + ",-";
+        }
+    } else {
+        productPriceEl.innerText = 100 + ",-";
+    }
+}
+
 // colors
 let color = "black"
 let productColorEl = document.getElementById("productColor")
@@ -17,7 +29,7 @@ function black() {
     color = "black"
     productColorEl.innerText = "Sort"
     image.src = images[0]
-    console.log(size + ", " + color);
+    updatePrice()
 }
 
 function white() {
@@ -25,21 +37,13 @@ function white() {
     image.src = images[3]
     productColorEl.innerText = "Hvid"
     productPriceEl.innerText = 100 + ",-";
-    console.log(size + ", " + color);
+    updatePrice()
 }
 
 // price
 let productPriceEl = document.getElementById("productPrice")
 let productPrice = 100 + ",-";
 productPriceEl.innerText = productPrice
-
-function updatePrice() {
-    if (color === "black") {
-        productPriceEl.innerText = 75
-    } else {
-        productPriceEl.innerText = 100
-    }
-}
 
 // sizes
 let size = "small"
@@ -54,30 +58,16 @@ function small() {
         productPriceEl.innerText = 100 + ",-";
     }
     updatePrice()
-    console.log(size + ", " + color);
 }
 
 function medium() {
     size = "medium"
     productSizeEl.innerText = "Medium"
-    if (color === "black") {
-        productPriceEl.innerText = 75 + ",-";
-    } else {
-        productPriceEl.innerText = 100 + ",-";
-    }
-    productSizeEl.innerText = "Medium"
     updatePrice()
-    console.log(size + ", " + color);
 }
 
 function large() {
     size = "large"
-    if (color === "black") {
-        productPriceEl.innerText = 75 + ",-";
-    } else {
-        productPriceEl.innerText = 100 + ",-";
-    }
     productSizeEl.innerText = "Large"
     updatePrice()
-    console.log(size + ", " + color);
 }
