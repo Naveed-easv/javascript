@@ -32,9 +32,8 @@ function updatePrice() {
 }
 
 // colors
-let color = "black";
+let color = "";
 let productColorEl = document.getElementById("productColor");
-productColorEl.innerText = "Sort";
 
 function black() {
     color = "black";
@@ -56,12 +55,11 @@ function white() {
 // price
 let productPriceEl = document.getElementById("productPrice");
 let productPrice = 100 + ",-";
-productPriceEl.innerText = productPrice;
 
 // sizes
-let size = "small";
+let size = "";
 let productSizeEl = document.getElementById("productSize");
-productSizeEl.innerText = "Small";
+productSizeEl.innerText = "";
 
 function small() {
     size = "small"
