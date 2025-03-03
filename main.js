@@ -10,7 +10,7 @@ let images = [
 // image
 let imageIndex = 0;
 let image = document.getElementById("productImage");
-let productSaleEl = document.getElementById("productSale")
+let productSaleEl = document.getElementById("productSale");
 
 function updateImage() {
     image.src = images[imageIndex];

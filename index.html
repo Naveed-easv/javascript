@@ -20,14 +20,22 @@
                 <p id="productSale" class="product__sale">På tilbud!</p>
             </div>
             <p class="product__description"></p>
-            <button onclick="white()">Hvid</button>
-            <button onclick="black()">Sort</button>
-            <button onclick="small()">Small</button>
-            <button onclick="medium()">Medium</button>
-            <button onclick="large()">Large</button>
-            <p class="product__size">Størrelse: <span id="productSize"></span></p>
-            <p class="product__color">Farve: <span id="productColor"></span></p>
-            <p class="product__price">Pris: <span id="productPrice"></span></p>
+            <div class="product__buttons">
+                <h4 class="color__title">Vælg farve:</h4>
+                <div class="product__color">
+                    <button onclick="white()">Hvid</button>
+                    <button onclick="black()">Sort</button>
+                </div>
+                <h4 class="color__title">Vælg størrelse:</h4>
+                <div class="product__size">
+                    <button onclick="small()">Small</button>
+                    <button onclick="medium()">Medium</button>
+                    <button onclick="large()">Large</button>
+                </div>
+            </div>
+            <p>Størrelse: <span id="productSize"></span></p>
+            <p>Farve: <span id="productColor"></span></p>
+            <p>Pris: <span id="productPrice"></span></p>
         </article>
     </section>
     <script src="main.js"></script>
