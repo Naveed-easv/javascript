@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="products">
+        <h2 class="products__title">Produkter</h2>
+        <article class="product">
+            <h3 class="product__title">T-Shirt</h3>
+            <div class="product__imageContainer">
+                <img
+                src="media/black-front.png"
+                alt="T-shirt"
+                class="product__image"
+                id="productImage">
+                <p id="productSale" class="product__sale">På tilbud!</p>
+            </div>
+            <p class="product__description"></p>
+            <div class="product__buttons">
+                <h4 class="color__title">Vælg farve:</h4>
+                <div class="product__color">
+                    <button onclick="white()">Hvid</button>
+                    <button onclick="black()">Sort</button>
+                </div>
+                <h4 class="color__title">Vælg størrelse:</h4>
+                <div class="product__size">
+                    <button onclick="small()">Small</button>
+                    <button onclick="medium()">Medium</button>
+                    <button onclick="large()">Large</button>
+                </div>
+            </div>
+            <p>Størrelse: <span id="productSize"></span></p>
+            <p>Farve: <span id="productColor"></span></p>
+            <p>Pris: <span id="productPrice"></span></p>
+        </article>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
