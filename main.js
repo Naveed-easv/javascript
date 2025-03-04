@@ -22,7 +22,11 @@ const productsEl = document.getElementById("products")
 for (const product of products) {
     const productArticle = document.createElement("article");
     productArticle.classList.add("product");
+    const statusIcon = product.available 
+    ? "✅ På lager"
+    : "❌ Ikke på lager";
     productArticle.innerHTML = `
+    <span class="product__status">${statusIcon}</span>
     <img 
     src=${product.image} 
     alt="T-shirt" 
