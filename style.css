@@ -21,7 +21,6 @@ p, h1, h2, h3, button{
 }
 .product__image{
     width: 100%;
-    background-color: rgb(224, 125, 90);
     box-shadow: 0 4px 4px 4px hsla(0, 0%, 0%, 0.2);
     border-radius: 8px;
 }
