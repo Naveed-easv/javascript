@@ -19,11 +19,18 @@ const products = [
 
 const productsEl = document.getElementById("products")
 const statusEl = document.getElementById("status")
+const sortProductsEl = document.getElementById("sortProducts")
 
-function renderProducts(showStatus) {
+function renderProducts(showStatus, sortOrder) {
+    let filteredProducts = products.filter(product => !(showStatus && !product.available)) ; // define list of filtered products if the user does not want to hide unavailable products AND the product is available
+    if (sortOrder === "high-to-low") {
+        filteredProducts.sort((a, b) => b.price - a.price);
+    } else if (sortOrder === "low-to-high") {
+        filteredProducts.sort((a, b) => a.price - b.price);
+    }
+
     productsEl.innerHTML = ""; // clear content to avoid duplicate products
-    for (const product of products) {
-        if (showStatus && !product.available) continue; // if the user wants to hide unavailable products AND the product is not available, the product will be skipped in the loop
+    for (const product of filteredProducts) { // run loop of only filtered products
         const productArticle = document.createElement("article");
         productArticle.classList.add("product");
         const statusMessage = product.available
@@ -45,7 +52,11 @@ function renderProducts(showStatus) {
     }
 }
 statusEl.addEventListener("change", () => {
-    renderProducts(statusEl.checked) // detects when the checkbox state changes and updates its value
+    renderProducts(statusEl.checked, sortProductsEl.value);
+});
+
+sortProductsEl.addEventListener("change", () => {
+    renderProducts(statusEl.checked, sortProductsEl.value);
 });
 
 renderProducts(false); // display unavailable products by default
