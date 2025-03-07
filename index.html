@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <label class="status">
-        <input type="checkbox" id="status"> Vis kun produkter på lager
-    </label>
+    <div class="sort">
+        <label class="sort__status">
+            <input type="checkbox" id="status">Vis kun produkter på lager
+        </label>
+        <label for="sortProducts">Sortér efter pris:
+            <select name="sortProducts" id="sortProducts">
+                <option value="">--Vælg en mulighed--</option>
+                <option value="high-to-low">Højest til lavest</option>
+                <option value="low-to-high">Lavest til højst</option>
+            </select>
+        </label>
+    </div>
     <div id="products" class="products"></div>
     <script src="main.js"></script>
 </body>
