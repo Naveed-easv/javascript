@@ -3,23 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kategoriside</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class="sort">
-        <label class="sort__status">
-            <input type="checkbox" id="status">Vis kun produkter på lager
-        </label>
-        <label for="sortProducts">Sortér efter pris:
-            <select name="sortProducts" id="sortProducts">
-                <option value="">--Vælg en mulighed--</option>
-                <option value="high-to-low">Højest til lavest</option>
-                <option value="low-to-high">Lavest til højst</option>
-            </select>
-        </label>
-    </div>
-    <div id="products" class="products"></div>
+    <h1>Input amount</h1>
+    <input type="number" id="input" onkeypress="if(event.key === 'Enter') saveText()">
+    <h2 id="text"></h2>
+    <button onclick="saveText()" id="button">CLICK FOR FREE VBUCKS</button>
     <script src="main.js"></script>
 </body>
 </html>
