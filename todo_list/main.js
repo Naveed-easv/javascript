@@ -1,5 +1,14 @@
+let currentOffset = 0;
+function showMore() {
+  currentOffset += 30;
+  if (currentOffset >= 254) {
+    currentOffset = 0;
+  }
+  getData(currentOffset);
+}
+
 async function getData() {
-    const url = "https://dummyjson.com/todos";
+    let url = `https://dummyjson.com/todos?skip=${currentOffset}&limit=30`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -10,6 +19,7 @@ async function getData() {
       console.log(json);
       const listEl = document.getElementById("list");
 
+      listEl.innerHTML = "";
       for (const item of json.todos) {
         let myClass = "uncompleted"
         const statusMessage = item.completed
@@ -18,7 +28,7 @@ async function getData() {
         if (item.completed === true) {
             myClass = "completed"
         }
-        listEl.innerHTML += `<li class="${myClass}">${item.todo} - completed: ${statusMessage}</li>`
+        listEl.innerHTML += `<li class="${myClass}">${statusMessage} - ${item.todo}</li>`
     }
     } catch (error) {
       console.error(error.message);
