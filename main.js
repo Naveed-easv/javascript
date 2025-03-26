@@ -50,7 +50,6 @@ const gumsEl = document.getElementById("gums");
 
 // Get only the first 3 items
 Object.entries(gums).slice(0, 3).forEach(([key, value]) => {
-    // Append new article elements using innerHTML
     gumsEl.innerHTML += `
         <article class="gum">
             <h2 id="${key}__name" class="gum__name">${value.name}</h2>
