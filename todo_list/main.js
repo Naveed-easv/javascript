@@ -18,7 +18,7 @@ async function getData() {
         if (item.completed === true) {
             myClass = "completed"
         }
-        listEl.innerHTML += `<li class="${myClass}">${item.todo} - status: ${statusMessage}</li>`
+        listEl.innerHTML += `<li class="${myClass}">${item.todo} - completed: ${statusMessage}</li>`
     }
     } catch (error) {
       console.error(error.message);
