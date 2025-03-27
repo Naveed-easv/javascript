@@ -1,24 +1,22 @@
 let currentOffset = 0;
-function showMore() {
-  currentOffset += 30;
-  if (currentOffset >= 254) {
-    currentOffset = 0;
-  }
-  getData(currentOffset);
-}
+let totalTodos = null;
 
-async function getData() {
+async function getData(currentOffset) {
     let url = `https://dummyjson.com/todos?skip=${currentOffset}&limit=30`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error("Response status: ${response.status}");
+        throw new Error(`Response status: ${response.status}`);
       }
   
       const json = await response.json();
       console.log(json);
-      const listEl = document.getElementById("list");
 
+      if (totalTodos === null) {
+        totalTodos = json.total;
+      }
+      
+      const listEl = document.getElementById("list");
       listEl.innerHTML = "";
       for (const item of json.todos) {
         let myClass = "uncompleted"
@@ -34,4 +32,12 @@ async function getData() {
       console.error(error.message);
     }
 }
-getData();
+
+function showMore() {
+  currentOffset += 30;
+  if (totalTodos != null && currentOffset >= totalTodos ) {
+    currentOffset = 0;
+  }
+  getData(currentOffset);
+}
+getData(0)
