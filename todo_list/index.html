@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="text" id="newTodo" placeholder="Write a todo" onkeydown="if(event.key === 'Enter') addTodo()">
+    <h1>TODOS</h1>
+    <input type="text" id="newTodo" placeholder="Add a todo" onkeydown="if(event.key === 'Enter') addTodo()">
     <button onclick="addTodo()">Add</button>
     <ul id="list"></ul>
-    <button onclick="showMore()">Show more</button>
+    <button onclick="showMore()">Load more</button>
     <script src="main.js"></script>
 </body>
 </html>
