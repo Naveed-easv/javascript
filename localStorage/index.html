@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Input amount</h1>
-    <input type="number" id="input" onkeypress="if(event.key === 'Enter') saveText()">
+    <input type="number" id="input" onkeydown="if(event.key === 'Enter') saveText()">
     <h2 id="text"></h2>
     <button onclick="saveText()" id="button">CLICK FOR FREE VBUCKS</button>
     <script src="main.js"></script>

@@ -6,7 +6,7 @@
     <title>Fetch</title>
 </head>
 <body>
-    <input type="text" id="pokemonName" placeholder="Indtast Pokémon navn" onkeypress="if(event.key === 'Enter') fetchData()">
+    <input type="text" id="pokemonName" placeholder="Indtast Pokémon navn" onkeydown="if(event.key === 'Enter') fetchData()">
     <button onclick="fetchData()">Hent Pokémon</button><br>
     <img src="" alt="Pokémon Sprite" id="pokemonImage" style="display: none">
     <script src="fetch.js"></script>

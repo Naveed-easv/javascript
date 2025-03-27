@@ -23,7 +23,7 @@
                 <p class="product__amount">Antal i kurven:
                     <span id="product1__amount">0</span>
                 </p>
-                <input type="number" id="product1Input" min="0" placeholder="Indtast antal" onkeypress="if(event.key === 'Enter') updateProductAmount('product1', this)"> <!--  "this" refers to the "<input>" element -->
+                <input type="number" id="product1Input" min="0" placeholder="Indtast antal" onkeydown="if(event.key === 'Enter') updateProductAmount('product1', this)"> <!--  "this" refers to the "<input>" element -->
                 <button onclick="addProduct('product1')">
                     <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#fff"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
                 </button>
@@ -56,7 +56,7 @@
                 <button onclick="removeProduct('product2')">
                     <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed"><path d="M200-440v-80h560v80H200Z"/></svg>
                 </button>
-                <input type="number" id="product2Input" min="0" placeholder="Indtast antal" onkeypress="if(event.key === 'Enter') updateProductAmount('product2', this)"> <!--  "this" refers to the "<input>" element -->
+                <input type="number" id="product2Input" min="0" placeholder="Indtast antal" onkeydown="if(event.key === 'Enter') updateProductAmount('product2', this)"> <!--  "this" refers to the "<input>" element -->
             </div>
             <h3 class="product__totalPrice--title">Samlet pris:
                 <span id="product2__cost" class="product__totalPrice"></span>
