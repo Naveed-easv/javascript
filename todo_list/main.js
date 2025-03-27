@@ -1,5 +1,6 @@
 let currentOffset = 0;
 let totalTodos = null;
+const listEl = document.getElementById("list");
 
 async function getData(currentOffset) {
     let url = `https://dummyjson.com/todos?skip=${currentOffset}&limit=30`;
@@ -16,8 +17,6 @@ async function getData(currentOffset) {
         totalTodos = json.total;
       }
       
-      const listEl = document.getElementById("list");
-      listEl.innerHTML = "";
       for (const item of json.todos) {
         let myClass = "uncompleted"
         const statusMessage = item.completed
@@ -41,3 +40,23 @@ function showMore() {
   getData(currentOffset);
 }
 getData(0)
+
+
+async function addTodo() {
+  let newTodoText = document.getElementById("newTodo").value;
+  console.log(newTodoText);
+  const response = await fetch("https://dummyjson.com/todos/add", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ 
+      todo: newTodoText, 
+      completed: false,
+      userId: 1,
+    })
+});
+  const newTodo = await response.json();
+  listEl.innerHTML += `<li class=uncompleted>❌ - ${newTodo.todo}</li>`
+  console.log(newTodo);
+}
