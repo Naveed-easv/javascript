@@ -13,7 +13,7 @@ async function fetchCart() {
 
       for (const product of json.products) {
         productsEl.innerHTML += `
-        <li class="product" onclick="fetchProduct(${product.id})">
+        <li class="product__preview" onclick="fetchProduct(${product.id})">
             <h3 class="product__title">${product.title}</h3>
             <div class="product__info">
                 <p>Antal: ${product.quantity}<span id="productAmount"></span></p>
@@ -49,8 +49,27 @@ async function fetchProduct(productId) {
       const json = await response.json();
       console.log(json);
       
-      const descriptionTitleEl = document.querySelector(".description > h2")
-      descriptionTitleEl.innerHTML = json.title
+      const titleEl = document.querySelector(".product > h2")
+      const categoryEl = document.querySelector(".product > p > span")
+      const imagesEl = document.querySelector(".product__images")
+      const descriptionEl = document.querySelector(".product__description")
+      const tagsEl = document.querySelector(".product__tags")
+
+      titleEl.innerHTML = json.title
+      categoryEl.innerHTML = json.category
+      descriptionEl.innerHTML = json.description
+
+      imagesEl.innerHTML = ""
+      for (const image of json.images) {
+        imagesEl.innerHTML += `
+        <img src="${image}" alt="">`
+      }
+
+      tagsEl.innerHTML = ""
+      for (const tag of json.tags) {
+        tagsEl.innerHTML += `
+        <li>${tag}</li>`
+      }
     } catch (error) {
       console.error(error.message);
     }
