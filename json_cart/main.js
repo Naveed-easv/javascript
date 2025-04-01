@@ -40,6 +40,22 @@ fetchCart()
 
 async function fetchProduct(productId) {
     const url = `https://dummyjson.com/products/${productId}`;
+
+    function formatCategory(category) {
+      // Dictionary for known special cases
+      const specialCases = {
+          "womens": "Women's",
+          "mens": "Men's",
+          "kids": "Kids'", // Possessive if needed
+      };
+    
+      return category
+          .replace(/-/g, " ") // Replace all hyphens with spaces
+          .split(" ") // Split into words
+          .map(word => specialCases[word.toLowerCase()] || word.charAt(0).toUpperCase() + word.slice(1)) // Handle special cases & capitalization
+          .join(" "); // Join words back
+    }
+
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -56,16 +72,16 @@ async function fetchProduct(productId) {
       const tagsEl = document.querySelector(".product__tags")
 
       titleEl.innerHTML = json.title
-      categoryEl.innerHTML = json.category
+      categoryEl.innerHTML = formatCategory(json.category)
       descriptionEl.innerHTML = json.description
 
-      imagesEl.innerHTML = ""
+      imagesEl.innerHTML = "" // clear images before inserting new ones
       for (const image of json.images) {
         imagesEl.innerHTML += `
         <img src="${image}" alt="">`
       }
 
-      tagsEl.innerHTML = ""
+      tagsEl.innerHTML = "" // clear tags before inserting new ones
       for (const tag of json.tags) {
         tagsEl.innerHTML += `
         <li>${tag}</li>`
