@@ -1,6 +1,6 @@
 async function fetchCart() {
-    const productsEl = document.querySelector(".products");
-    const titleEl = document.querySelector(".info__title");
+    const productsEl = document.querySelector(".cart__products");
+    const titleEl = document.querySelector(".header__title");
     const url = "https://dummyjson.com/carts/1";
     try {
       const response = await fetch(url);
@@ -16,7 +16,7 @@ async function fetchCart() {
         <li class="product__preview" onclick="fetchProduct(${product.id})">
             <h3 class="product__title">${product.title}</h3>
             <div class="product__info">
-                <p>Antal: ${product.quantity}<span id="productAmount"></span></p>
+                <p>Amount: ${product.quantity}<span id="productAmount"></span></p>
                 <p id="productPrice">${product.price}$</p>
             </div>
         </li>`        
@@ -31,12 +31,6 @@ async function fetchCart() {
     }
 }
 fetchCart()
-
-// function sum(tal1, tal2) {
-//     return tal1 + tal2
-// }
-// sum(32, 10)
-// console.log(sum(32, 10));
 
 async function fetchProduct(productId) {
     const url = `https://dummyjson.com/products/${productId}`;
@@ -77,8 +71,7 @@ async function fetchProduct(productId) {
 
       imagesEl.innerHTML = "" // clear images before inserting new ones
       for (const image of json.images) {
-        imagesEl.innerHTML += `
-        <img src="${image}" alt="">`
+      imagesEl.innerHTML += `<img src="${image}" alt="${json.title}">`;
       }
 
       tagsEl.innerHTML = "" // clear tags before inserting new ones
